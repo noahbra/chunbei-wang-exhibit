@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>When Policy Climate Changes, So Does Who Becomes an Entrepreneur</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Source+Serif+4:wght@400;600;700&display=swap');
+
+  :root {
+    --navy: #1a2744;
+    --teal: #1b6d6d;
+    --gold: #c5972c;
+    --sand: #f5f0e8;
+    --slate: #4a5568;
+    --light-teal: #e6f0ef;
+    --push-color: #c53030;
+    --pull-color: #2b6cb0;
+  }
+
+  .reveal {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 28px;
+    color: var(--navy);
+  }
+
+  .reveal h1, .reveal h2, .reveal h3 {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+
+  .reveal h1 { font-size: 2.2em; line-height: 1.15; }
+  .reveal h2 { font-size: 1.6em; line-height: 1.2; }
+  .reveal h3 { font-size: 1.2em; }
+
+  .reveal .slide-background { background: var(--sand); }
+
+  /* Dark slides */
+  .reveal .dark-bg { background: var(--navy) !important; }
+  .reveal .dark-bg h1,
+  .reveal .dark-bg h2,
+  .reveal .dark-bg h3,
+  .reveal .dark-bg p,
+  .reveal .dark-bg li,
+  .reveal .dark-bg span { color: #fff !important; }
+  .reveal .dark-bg .subtitle { color: rgba(255,255,255,0.7) !important; }
+
+  /* Teal slides */
+  .reveal .teal-bg { background: var(--teal) !important; }
+  .reveal .teal-bg h1,
+  .reveal .teal-bg h2,
+  .reveal .teal-bg h3,
+  .reveal .teal-bg p,
+  .reveal .teal-bg li,
+  .reveal .teal-bg span { color: #fff !important; }
+
+  .subtitle {
+    font-size: 0.7em;
+    color: var(--slate);
+    font-weight: 300;
+    margin-top: 0.5em;
+  }
+
+  .big-number {
+    font-size: 4em;
+    font-weight: 700;
+    color: var(--teal);
+    line-height: 1;
+  }
+
+  .reveal .gold { color: var(--gold); }
+  .reveal .teal { color: var(--teal); }
+
+  .two-col {
+    display: flex;
+    gap: 2em;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .two-col > div { flex: 1; }
+
+  .force-box {
+    border-radius: 12px;
+    padding: 1.2em 1.5em;
+    margin: 0.5em 0;
+    text-align: left;
+  }
+  .force-box.push {
+    background: rgba(197, 48, 48, 0.08);
+    border-left: 5px solid var(--push-color);
+  }
+  .force-box.pull {
+    background: rgba(43, 108, 176, 0.08);
+    border-left: 5px solid var(--pull-color);
+  }
+  .force-box h3 {
+    margin: 0 0 0.4em 0;
+    font-size: 0.95em;
+  }
+  .force-box.push h3 { color: var(--push-color) !important; }
+  .force-box.pull h3 { color: var(--pull-color) !important; }
+  .force-box ul {
+    margin: 0;
+    padding-left: 1.2em;
+    font-size: 0.85em;
+    line-height: 1.6;
+  }
+
+  .evidence-col {
+    border-radius: 12px;
+    padding: 1.2em 1.5em;
+    text-align: left;
+  }
+  .evidence-col.up {
+    background: rgba(197, 48, 48, 0.06);
+    border-top: 4px solid var(--push-color);
+  }
+  .evidence-col.down {
+    background: rgba(43, 108, 176, 0.06);
+    border-top: 4px solid var(--pull-color);
+  }
+
+  .arrow-up { color: var(--push-color); font-size: 1.4em; }
+  .arrow-down { color: var(--pull-color); font-size: 1.4em; }
+
+  .insight-text {
+    font-size: 1.3em;
+    line-height: 1.5;
+    max-width: 80%;
+    margin: 0 auto;
+    font-family: 'Source Serif 4', serif;
+  }
+
+  .map-container {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .map-container img {
+    max-height: 380px;
+    border-radius: 8px;
+    background: #fff;
+    padding: 0.5em;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+
+  .chart-img {
+    max-height: 420px;
+    border-radius: 8px;
+    background: #fff;
+    padding: 0.5em;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+
+  .tag {
+    display: inline-block;
+    background: var(--teal);
+    color: #fff;
+    padding: 0.2em 0.7em;
+    border-radius: 20px;
+    font-size: 0.6em;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    vertical-align: middle;
+    margin-left: 0.5em;
+  }
+
+  .indicator-row {
+    display: flex;
+    gap: 1em;
+    text-align: left;
+    margin: 0.5em 0;
+    align-items: flex-start;
+  }
+  .indicator-row .label {
+    font-weight: 700;
+    color: var(--teal);
+    min-width: 220px;
+    font-size: 0.95em;
+  }
+  .indicator-row .desc {
+    font-size: 0.9em;
+    color: var(--slate);
+    line-height: 1.5;
+  }
+
+  .question-slide p {
+    font-size: 1.8em;
+    font-family: 'Source Serif 4', serif;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .reveal .progress { color: var(--teal); height: 4px; }
+  .reveal .controls { color: var(--teal); }
+
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--teal), var(--gold));
+  }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+  <!-- Slide 1: Title -->
+  <section data-background-color="#1a2744" data-auto-animate>
+    <h1 style="color:#fff; font-size:2em;">When Policy Climate Changes,<br>So Does Who Becomes<br>an Entrepreneur</h1>
+    <p class="subtitle" style="color:rgba(255,255,255,0.6); margin-top:1.5em;">
+      Chunbei Wang&ensp;|&ensp;Virginia Tech
+    </p>
+    <div class="bottom-bar"></div>
+  </section>
+
+  <!-- Slide 2: Hook stat + chart -->
+  <section data-auto-animate>
+    <h2>Immigrants Are <span class="teal">2&times;</span> More Likely<br>to Start Businesses</h2>
+    <p style="color:var(--slate); font-size:0.85em; margin-bottom:0.5em;">The gap has widened since the mid-2000s</p>
+    <img src="chart-entry-rate.png" class="chart-img" alt="Entry rate chart showing immigrants vs natives 1994-2024">
+    <div class="bottom-bar"></div>
+  </section>
+
+  <!-- Slide 3: Question -->
+  <section data-background-color="#1b6d6d" class="question-slide">
+    <p style="color:#fff;">What drives the rise in immigrant entrepreneurship?</p>
+    <p style="color:rgba(255,255,255,0.65); font-size:0.85em;">The timing coincides with tighter immigration enforcement.</p>
+    <div class="bottom-bar"></div>
+  </section>
+
+  <!-- Slide 4: Up or Down? -->
+  <section data-auto-animate>
+    <h2>What Does Enforcement Do<br>to Entrepreneurship?</h2>
+    <div style="display:flex; gap:3em; justify-content:center; margin-top:2em;">
+      <div style="text-align:center;">
+        <span style="font-size:5em; color:var(--push-color);">&#8593;</span>
+        <p style="font-size:1.1em; font-weight:600;">Increase?</p>
+      </div>
+      <div style="text-align:center;">
+        <span style="font-size:5em; color:var(--pull-color);">&#8595;</span>
+        <p style="font-size:1.1em; font-weight:600;">Decrease?</p>
+      </div>
+    </div>
+    <div class="bottom-bar"></div>
+  </section>
+
+  <!-- Slide 5: Answer -->
+  <section data-background-color="#1a2744">
+    <p style="color:rgba(255,255,255,0.5); font-size:1em; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;">Answer</p>
+    <h1 style="color:var(--gold); font-size:4em; margin:0.2em 0;">Both.</h1>
+    <div class="bottom-bar"></div>
+  </section>
+
+  <!-- Slide 6: Two Forces -->
+  <section data-auto-animate>
+    <h2>One Policy, Two Forces</h2>
+    <div style="display:flex; gap:1.5em; margin-top:1em;">
+      <div class="force-box push" style="flex:1;">
+        <h3><span class="arrow-up">&#8593;</span> Push Into Entrepreneurship</h3>
+        <ul>
+          <li>Fewer wage jobs available</li>
+          <li>Exit from formal employment</li>
+          <li>More necessity entrepreneurship<br><small style="color:var(--slate);">(self-employment when wage options shrink)</small></li>
+        </ul>
+      </div>
+      <div class="force-box pull" style="flex:1;">
+        <h3><span class="arrow-down">&#8595;</span> Pull Away from Entrepreneurship</h3>
+        <ul>
+          <li>Smaller customer base</li>
+          <li>Less access to credit</li>
+          <li>Discrimination and uncertainty</li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-bar"></div>
+  </section>
+
+  <!-- Slide 7: Evidence -->
+  <section data-auto-animate>
+    <h2>Same Policy, Different Responses</h2>
+    <div style="display:flex; gap:1.5em; margin-top:1em;">
+      <div class="evidence-col up" style="flex:1;">
+        <p><span class="arrow-up" style="font-size:1.8em;">&#8593;</span></p>
+        <h3 style="margin:0.3em 0;">Hispanic Immigrants</h3>
+        <p style="font-size:0.9em; color:var(--slate); line-height:1.6;">
+          Large increase in self-employment.<br>
+          Mostly necessity-driven.
+        </p>
+      </div>
+      <div class="evidence-col down" style="flex:1;">
+        <p><span class="arrow-down" style="font-size:1.8em;">&#8595;</span></p>
+        <h3 style="margin:0.3em 0;">Arab &amp; Muslim Immigrants</h3>
+        <p style="font-size:0.9em; color:var(--slate); line-height:1.6;">
+          Sharp decline post-9/11.<br>
+          Uncertainty and potential discrimination.
+        </p>
+      </div>
+    </div>
+    <p style="margin-top:1.5em; font-size:0.95em; color:var(--slate);">So what happens overall?</p>
+    <div class="bottom-bar"></div>
+  </section>
+
+  <!-- Slide 8: Overall -->
+  <section data-auto-animate>
+    <h2>Overall: <span class="teal">Increase</span></h2>
+    <div style="text-align:left; max-width:75%; margin:1.5em auto 0;">
+      <p style="font-size:1.05em; line-height:1.7;">
+        <strong>Hispanic immigrants</strong> drive the overall rise:
+      </p>
+      <ul style="font-size:0.95em; line-height:1.8; color:var(--slate);">
+        <li>Large undocumented population</li>
+        <li>Large impact from enforcement</li>
+        <li>Strong shift into necessity entrepreneurship</li>
+      </ul>
+      <p style="font-size:0.95em; line-height:1.7; margin-top:1em;">
+        This partly drives the overall rise in immigrant entrepreneurship rates.
+      </p>
+    </div>
+    <div class="bottom-bar"></div>
+  </section>
+
+  <!-- Slide 9: Maps -->
+  <section data-auto-animate>
+    <h2 style="font-size:1.3em;">Where Would You Expect Immigrant<br>Entrepreneurship to Rise?</h2>
+    <p style="color:var(--slate); font-size:0.8em;">Necessity entrepreneurship rises most where enforcement is strongest</p>
+    <div class="map-container">
+      <img src="map-enforcement.png" alt="Map: Enforcement Change 2000-2023">
+      <img src="map-necessity-entry.png" alt="Map: Change in Immigrant Necessity Entry 2000-2023">
+    </div>
+    <div class="bottom-bar"></div>
+  </section>
+
+  <!-- Slide 10: Core Insight -->
+  <section data-background-color="#1b6d6d">
+    <p style="color:rgba(255,255,255,0.5); font-size:0.85em; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;">Core Insight</p>
+    <p class="insight-text" style="color:#fff;">
+      The rise in immigrant entrepreneurship is not just about opportunity.<br><br>
+      <span style="color:var(--gold);">It is partly driven by constraint.</span>
+    </p>
+    <div class="bottom-bar"></div>
+  </section>
+
+  <!-- Slide 11: Kauffman connection -->
+  <section data-auto-animate>
+    <h2>Connection to Kauffman Indicators</h2>
+    <div style="max-width:80%; margin:1.5em auto 0; text-align:left;">
+      <div class="indicator-row">
+        <div class="label">Entrepreneurial Rate</div>
+        <div class="desc">Explains why immigrant entry rate rises.</div>
+      </div>
+      <hr style="border:none; border-top:1px solid rgba(0,0,0,0.08); margin:0.8em 0;">
+      <div class="indicator-row">
+        <div class="label">Opportunity vs. Necessity</div>
+        <div class="desc">Enforcement shifts entrepreneurship toward necessity.</div>
+      </div>
+      <hr style="border:none; border-top:1px solid rgba(0,0,0,0.08); margin:0.8em 0;">
+      <div class="indicator-row">
+        <div class="label" style="font-style:italic; color:var(--slate);">The key question</div>
+        <div class="desc" style="font-weight:600; color:var(--navy);">Not just how many businesses start, but <em>why</em> they start.</div>
+      </div>
+    </div>
+    <div class="bottom-bar"></div>
+  </section>
+
+  <!-- Slide 12: Takeaway -->
+  <section data-background-color="#1a2744">
+    <p style="color:rgba(255,255,255,0.5); font-size:0.85em; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;">Takeaway</p>
+    <p class="insight-text" style="color:#fff; font-size:1.2em;">
+      Entrepreneurship statistics don't always reflect opportunity.
+    </p>
+    <p style="color:rgba(255,255,255,0.65); font-size:0.9em; max-width:75%; margin:1em auto 0; line-height:1.7;">
+      The increase in immigrant entrepreneurship is real, but much of it is driven by necessity, not expanding opportunity.
+    </p>
+    <p style="color:var(--gold); font-size:1em; margin-top:2em; font-family:'Source Serif 4',serif; font-weight:600;">
+      More entrepreneurs does not always mean more opportunity.
+    </p>
+    <div class="bottom-bar"></div>
+  </section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({
+  hash: true,
+  loop: true,
+  autoSlide: 15000,
+  autoSlideStoppable: true,
+  transition: 'fade',
+  transitionSpeed: 'slow',
+  controls: true,
+  progress: true,
+  center: true,
+  width: 1280,
+  height: 720
+});
+</script>
+</body>
+</html>
