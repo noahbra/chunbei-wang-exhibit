@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1292 932" width="1292" height="932">
+    
+      <g>
+        <rect x="34" y="24" width="80" height="80" rx="5" ry="5" fill="#EFE7DC"></rect>
+        <text x="74" y="72" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">AK</text>
+      </g>
+      <g>
+        <rect x="1002" y="112" width="80" height="80" rx="5" ry="5" fill="#EFE7DC"></rect>
+        <text x="1042" y="160" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">ME</text>
+      </g>
+      <g>
+        <rect x="914" y="200" width="80" height="80" rx="5" ry="5" fill="#EFE7DC"></rect>
+        <text x="954" y="248" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">VT</text>
+      </g>
+      <g>
+        <rect x="1002" y="200" width="80" height="80" rx="5" ry="5" fill="#EFE7DC"></rect>
+        <text x="1042" y="248" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">NH</text>
+      </g>
+      <g>
+        <rect x="122" y="288" width="80" height="80" rx="5" ry="5" fill="#CFDBE5"></rect>
+        <text x="162" y="336" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">WA</text>
+      </g>
+      <g>
+        <rect x="298" y="288" width="80" height="80" rx="5" ry="5" fill="#CFDBE5"></rect>
+        <text x="338" y="336" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">MT</text>
+      </g>
+      <g>
+        <rect x="474" y="288" width="80" height="80" rx="5" ry="5" fill="#CFDBE5"></rect>
+        <text x="514" y="336" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">ND</text>
+      </g>
+      <g>
+        <rect x="562" y="288" width="80" height="80" rx="5" ry="5" fill="#CFDBE5"></rect>
+        <text x="602" y="336" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">MN</text>
+      </g>
+      <g>
+        <rect x="650" y="288" width="80" height="80" rx="5" ry="5" fill="#CFDBE5"></rect>
+        <text x="690" y="336" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">WI</text>
+      </g>
+      <g>
+        <rect x="738" y="288" width="80" height="80" rx="5" ry="5" fill="#CFDBE5"></rect>
+        <text x="778" y="336" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">MI</text>
+      </g>
+      <g>
+        <rect x="914" y="288" width="80" height="80" rx="5" ry="5" fill="#EFE7DC"></rect>
+        <text x="954" y="336" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">NY</text>
+      </g>
+      <g>
+        <rect x="1002" y="288" width="80" height="80" rx="5" ry="5" fill="#EFE7DC"></rect>
+        <text x="1042" y="336" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">MA</text>
+      </g>
+      <g>
+        <rect x="210" y="376" width="80" height="80" rx="5" ry="5" fill="#94B6D4"></rect>
+        <text x="250" y="424" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">ID</text>
+      </g>
+      <g>
+        <rect x="298" y="376" width="80" height="80" rx="5" ry="5" fill="#94B6D4"></rect>
+        <text x="338" y="424" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">WY</text>
+      </g>
+      <g>
+        <rect x="474" y="376" width="80" height="80" rx="5" ry="5" fill="#CFDBE5"></rect>
+        <text x="514" y="424" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">SD</text>
+      </g>
+      <g>
+        <rect x="562" y="376" width="80" height="80" rx="5" ry="5" fill="#CFDBE5"></rect>
+        <text x="602" y="424" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">IA</text>
+      </g>
+      <g>
+        <rect x="650" y="376" width="80" height="80" rx="5" ry="5" fill="#CFDBE5"></rect>
+        <text x="690" y="424" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">IL</text>
+      </g>
+      <g>
+        <rect x="738" y="376" width="80" height="80" rx="5" ry="5" fill="#94B6D4"></rect>
+        <text x="778" y="424" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">IN</text>
+      </g>
+      <g>
+        <rect x="826" y="376" width="80" height="80" rx="5" ry="5" fill="#94B6D4"></rect>
+        <text x="866" y="424" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">OH</text>
+      </g>
+      <g>
+        <rect x="914" y="376" width="80" height="80" rx="5" ry="5" fill="#CFDBE5"></rect>
+        <text x="954" y="424" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">PA</text>
+      </g>
+      <g>
+        <rect x="1002" y="376" width="80" height="80" rx="5" ry="5" fill="#CFDBE5"></rect>
+        <text x="1042" y="424" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">NJ</text>
+      </g>
+      <g>
+        <rect x="1090" y="376" width="80" height="80" rx="5" ry="5" fill="#EFE7DC"></rect>
+        <text x="1130" y="424" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">CT</text>
+      </g>
+      <g>
+        <rect x="1178" y="376" width="80" height="80" rx="5" ry="5" fill="#EFE7DC"></rect>
+        <text x="1218" y="424" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">RI</text>
+      </g>
+      <g>
+        <rect x="122" y="464" width="80" height="80" rx="5" ry="5" fill="#CFDBE5"></rect>
+        <text x="162" y="512" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">OR</text>
+      </g>
+      <g>
+        <rect x="210" y="464" width="80" height="80" rx="5" ry="5" fill="#4A7DAE"></rect>
+        <text x="250" y="512" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#FAF6EE" text-anchor="middle">NV</text>
+      </g>
+      <g>
+        <rect x="298" y="464" width="80" height="80" rx="5" ry="5" fill="#4A7DAE"></rect>
+        <text x="338" y="512" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#FAF6EE" text-anchor="middle">UT</text>
+      </g>
+      <g>
+        <rect x="386" y="464" width="80" height="80" rx="5" ry="5" fill="#94B6D4"></rect>
+        <text x="426" y="512" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">CO</text>
+      </g>
+      <g>
+        <rect x="474" y="464" width="80" height="80" rx="5" ry="5" fill="#94B6D4"></rect>
+        <text x="514" y="512" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">NE</text>
+      </g>
+      <g>
+        <rect x="562" y="464" width="80" height="80" rx="5" ry="5" fill="#94B6D4"></rect>
+        <text x="602" y="512" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">MO</text>
+      </g>
+      <g>
+        <rect x="650" y="464" width="80" height="80" rx="5" ry="5" fill="#4A7DAE"></rect>
+        <text x="690" y="512" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#FAF6EE" text-anchor="middle">KY</text>
+      </g>
+      <g>
+        <rect x="738" y="464" width="80" height="80" rx="5" ry="5" fill="#CFDBE5"></rect>
+        <text x="778" y="512" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">WV</text>
+      </g>
+      <g>
+        <rect x="826" y="464" width="80" height="80" rx="5" ry="5" fill="#94B6D4"></rect>
+        <text x="866" y="512" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">VA</text>
+      </g>
+      <g>
+        <rect x="914" y="464" width="80" height="80" rx="5" ry="5" fill="#CFDBE5"></rect>
+        <text x="954" y="512" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">MD</text>
+      </g>
+      <g>
+        <rect x="1002" y="464" width="80" height="80" rx="5" ry="5" fill="#CFDBE5"></rect>
+        <text x="1042" y="512" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">DE</text>
+      </g>
+      <g>
+        <rect x="122" y="552" width="80" height="80" rx="5" ry="5" fill="#CFDBE5"></rect>
+        <text x="162" y="600" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">CA</text>
+      </g>
+      <g>
+        <rect x="298" y="552" width="80" height="80" rx="5" ry="5" fill="#1F4677"></rect>
+        <text x="338" y="600" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#FAF6EE" text-anchor="middle">AZ</text>
+      </g>
+      <g>
+        <rect x="386" y="552" width="80" height="80" rx="5" ry="5" fill="#4A7DAE"></rect>
+        <text x="426" y="600" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#FAF6EE" text-anchor="middle">NM</text>
+      </g>
+      <g>
+        <rect x="474" y="552" width="80" height="80" rx="5" ry="5" fill="#94B6D4"></rect>
+        <text x="514" y="600" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">KS</text>
+      </g>
+      <g>
+        <rect x="562" y="552" width="80" height="80" rx="5" ry="5" fill="#4A7DAE"></rect>
+        <text x="602" y="600" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#FAF6EE" text-anchor="middle">AR</text>
+      </g>
+      <g>
+        <rect x="650" y="552" width="80" height="80" rx="5" ry="5" fill="#1F4677"></rect>
+        <text x="690" y="600" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#FAF6EE" text-anchor="middle">TN</text>
+      </g>
+      <g>
+        <rect x="738" y="552" width="80" height="80" rx="5" ry="5" fill="#1F4677"></rect>
+        <text x="778" y="600" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#FAF6EE" text-anchor="middle">NC</text>
+      </g>
+      <g>
+        <rect x="826" y="552" width="80" height="80" rx="5" ry="5" fill="#1F4677"></rect>
+        <text x="866" y="600" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#FAF6EE" text-anchor="middle">SC</text>
+      </g>
+      <g>
+        <rect x="914" y="552" width="80" height="80" rx="5" ry="5" fill="#EFE7DC"></rect>
+        <text x="954" y="600" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">DC</text>
+      </g>
+      <g>
+        <rect x="34" y="640" width="80" height="80" rx="5" ry="5" fill="#EFE7DC"></rect>
+        <text x="74" y="688" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#3A332D" text-anchor="middle">HI</text>
+      </g>
+      <g>
+        <rect x="386" y="640" width="80" height="80" rx="5" ry="5" fill="#1F4677"></rect>
+        <text x="426" y="688" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#FAF6EE" text-anchor="middle">TX</text>
+      </g>
+      <g>
+        <rect x="474" y="640" width="80" height="80" rx="5" ry="5" fill="#4A7DAE"></rect>
+        <text x="514" y="688" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#FAF6EE" text-anchor="middle">OK</text>
+      </g>
+      <g>
+        <rect x="562" y="640" width="80" height="80" rx="5" ry="5" fill="#4A7DAE"></rect>
+        <text x="602" y="688" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#FAF6EE" text-anchor="middle">LA</text>
+      </g>
+      <g>
+        <rect x="650" y="640" width="80" height="80" rx="5" ry="5" fill="#4A7DAE"></rect>
+        <text x="690" y="688" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#FAF6EE" text-anchor="middle">MS</text>
+      </g>
+      <g>
+        <rect x="738" y="640" width="80" height="80" rx="5" ry="5" fill="#1F4677"></rect>
+        <text x="778" y="688" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#FAF6EE" text-anchor="middle">AL</text>
+      </g>
+      <g>
+        <rect x="826" y="640" width="80" height="80" rx="5" ry="5" fill="#1F4677"></rect>
+        <text x="866" y="688" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#FAF6EE" text-anchor="middle">GA</text>
+      </g>
+      <g>
+        <rect x="826" y="728" width="80" height="80" rx="5" ry="5" fill="#4A7DAE"></rect>
+        <text x="866" y="776" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" fill="#FAF6EE" text-anchor="middle">FL</text>
+      </g>
+    <g>
+    <text x="30" y="836" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="#3A332D" letter-spacing="2.5">CHANGE 2000 – 2023</text><rect x="30" y="848" width="100" height="16" fill="#EFE7DC"></rect><rect x="134" y="848" width="100" height="16" fill="#CFDBE5"></rect><rect x="238" y="848" width="100" height="16" fill="#94B6D4"></rect><rect x="342" y="848" width="100" height="16" fill="#4A7DAE"></rect><rect x="446" y="848" width="100" height="16" fill="#1F4677"></rect><text x="30" y="888" font-family="Inter, system-ui, sans-serif" font-size="16" fill="#6B635B">Less</text><text x="546" y="888" font-family="Inter, system-ui, sans-serif" font-size="16" fill="#6B635B" text-anchor="end">More</text></g>
+  </svg>

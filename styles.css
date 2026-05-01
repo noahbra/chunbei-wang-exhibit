@@ -1,0 +1,460 @@
+/* ============================================================
+   ThirdWay × Kauffman Indicators — Looping Exhibit Deck
+   ============================================================ */
+
+/* ---------- Brand tokens ---------- */
+:root {
+  --blue:        #3579BD;
+  --blue-light:  #478BCA;
+  --blue-deep:   #1F4F82;
+  --orange:      #F07923;
+  --orange-soft: #F5A45C;
+  --lime:        #97C13C;
+  --gold:        #FEDD75;
+  --warm-dark:   #4F453D;
+  --ink:         #1d1815;
+  --paper:       #FBF8F3;
+  --paper-2:     #F1ECE3;
+  --rule:        rgba(79, 69, 61, 0.18);
+  --rule-soft:   rgba(79, 69, 61, 0.10);
+
+  --serif: "Source Serif 4", "Source Serif Pro", "Georgia", serif;
+  --sans:  "Inter Tight", "Aptos", "Aptos Display", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --mono:  "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+}
+
+/* ---------- Stage / canvas ---------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  font-family: var(--sans);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+deck-stage {
+  background: #000;
+}
+
+/* Every slide is a 1920×1080 canvas */
+section.slide {
+  width: 1920px;
+  height: 1080px;
+  position: relative;
+  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-feature-settings: "ss01", "cv11";
+}
+
+/* ---------- Anniversary footer mark (every slide) ---------- */
+.anniv-mark {
+  position: absolute;
+  left: 64px;
+  bottom: 56px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 10;
+  pointer-events: none;
+}
+.anniv-mark .badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--orange) 100%);
+  display: grid;
+  place-items: center;
+  color: white;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 8px rgba(53, 121, 189, 0.25);
+}
+.anniv-mark .text {
+  font-family: var(--sans);
+  font-size: 24px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--warm-dark);
+  opacity: 0.8;
+  font-weight: 500;
+}
+.anniv-mark .text strong {
+  color: var(--blue-deep);
+  font-weight: 700;
+}
+
+/* Light-on-dark variant for cover/section slides */
+section.slide.dark .anniv-mark .text { color: rgba(255,255,255,0.85); }
+section.slide.dark .anniv-mark .text strong { color: white; }
+section.slide.dark .anniv-mark .badge {
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+}
+
+/* Slide-counter in opposite corner — researcher attribution */
+.slide-attr {
+  position: absolute;
+  right: 64px;
+  bottom: 64px;
+  z-index: 10;
+  font-family: var(--sans);
+  font-size: 24px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--warm-dark);
+  opacity: 0.6;
+  font-weight: 500;
+}
+section.slide.dark .slide-attr { color: rgba(255,255,255,0.7); }
+
+/* ---------- Slide background variants ---------- */
+section.slide.bg-cover {
+  background:
+    radial-gradient(ellipse at 22% 62%, rgba(245, 164, 92, 0.55) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 38%, rgba(151, 193, 60, 0.40) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 50%, #4A8DC7 0%, #2A6BA8 60%, #1F4F82 100%);
+}
+section.slide.bg-cover::before {
+  content: none;
+}
+
+section.slide.bg-warm {
+  background:
+    radial-gradient(ellipse at 0% 100%, rgba(240, 121, 35, 0.22) 0%, transparent 55%),
+    radial-gradient(ellipse at 100% 0%, rgba(53, 121, 189, 0.15) 0%, transparent 60%),
+    var(--paper);
+}
+
+section.slide.bg-blue {
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(151, 193, 60, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 90%, rgba(240, 121, 35, 0.20) 0%, transparent 55%),
+    linear-gradient(135deg, #2A6BA8 0%, #478BCA 100%);
+}
+
+section.slide.bg-paper { background: var(--paper); }
+
+section.slide.bg-strip {
+  background: var(--paper);
+}
+section.slide.bg-strip::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 14px;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--orange) 50%, var(--lime) 100%);
+}
+
+/* ---------- Typography ---------- */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin: 0;
+}
+
+.h-display {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 132px;
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.h-1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 92px;
+  line-height: 1.02;
+  letter-spacing: -0.018em;
+  margin: 0;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.h-2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 1.08;
+  letter-spacing: -0.012em;
+  margin: 0;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.h-3 {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  margin: 0;
+  color: var(--ink);
+}
+
+.body-lg {
+  font-family: var(--sans);
+  font-size: 32px;
+  line-height: 1.45;
+  font-weight: 400;
+  color: var(--warm-dark);
+  text-wrap: pretty;
+}
+
+.body {
+  font-family: var(--sans);
+  font-size: 26px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--warm-dark);
+  text-wrap: pretty;
+}
+
+.label-cap {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Italic-serif accent */
+em.accent { font-style: italic; color: var(--orange); }
+.text-blue { color: var(--blue); }
+.text-blue-deep { color: var(--blue-deep); }
+.text-orange { color: var(--orange); }
+.text-lime { color: var(--lime); }
+.text-warm { color: var(--warm-dark); }
+.text-white { color: white; }
+.text-paper { color: var(--paper); }
+
+/* ---------- Animation primitives ---------- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes drawLine {
+  from { stroke-dashoffset: var(--len, 1200); }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes slowDrift {
+  0%   { transform: scale(1.04) translate(0, 0); }
+  100% { transform: scale(1.10) translate(-1.5%, -1%); }
+}
+@keyframes shimmer {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+@keyframes pulseUp {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+@keyframes pulseDown {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(12px); }
+}
+@keyframes rotateIn {
+  from { opacity: 0; transform: rotate(-12deg) scale(0.85); }
+  to   { opacity: 1; transform: rotate(0) scale(1); }
+}
+
+/* When a slide becomes active, replay reveals.
+   deck-stage stamps [data-deck-active] on the current slide. */
+section.slide[data-deck-active] .reveal {
+  animation: fadeUp 1.0s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+section.slide[data-deck-active] .reveal-fade {
+  animation: fadeIn 1.2s ease both;
+}
+section.slide[data-deck-active] .reveal-scale {
+  animation: scaleIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+section.slide:not([data-deck-active]) .reveal,
+section.slide:not([data-deck-active]) .reveal-fade,
+section.slide:not([data-deck-active]) .reveal-scale {
+  opacity: 0;
+}
+
+/* Stagger delays */
+.d-0  { animation-delay: 0.05s !important; }
+.d-1  { animation-delay: 0.30s !important; }
+.d-2  { animation-delay: 0.60s !important; }
+.d-3  { animation-delay: 0.95s !important; }
+.d-4  { animation-delay: 1.35s !important; }
+.d-5  { animation-delay: 1.80s !important; }
+.d-6  { animation-delay: 2.30s !important; }
+.d-7  { animation-delay: 2.85s !important; }
+.d-8  { animation-delay: 3.40s !important; }
+
+/* ---------- Layout helpers ---------- */
+.pad-outer {
+  position: absolute;
+  inset: 110px 120px 130px 120px;
+}
+.col { display: flex; flex-direction: column; }
+.row { display: flex; }
+.gap-sm { gap: 16px; }
+.gap-md { gap: 32px; }
+.gap-lg { gap: 56px; }
+.gap-xl { gap: 88px; }
+
+/* ---------- Decorative flourishes ---------- */
+.rule-h {
+  height: 1px;
+  background: var(--rule);
+  width: 100%;
+}
+.rule-h-bold {
+  height: 4px;
+  background: var(--blue);
+  width: 80px;
+  border-radius: 2px;
+}
+
+/* Tiny dotted index in corner — anniversary subtle thread */
+.tick-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.tick-row span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--rule);
+}
+.tick-row span.on {
+  background: var(--orange);
+}
+
+
+/* ---------- Hand-drawn strike-through ---------- */
+.strike-word {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+.strike-word__text {
+  color: rgba(255,255,255,0.55);
+  font-style: italic;
+  font-family: var(--serif);
+  font-weight: 400;
+}
+.strike-word__slash {
+  position: absolute;
+  left: -2%;
+  top: 18%;
+  width: 104%;
+  height: 70%;
+  pointer-events: none;
+  overflow: visible;
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  animation: strike-draw 900ms cubic-bezier(0.55, 0.1, 0.25, 1) forwards;
+  animation-delay: 1.6s;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.25));
+}
+@keyframes strike-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ---------- Cross-dissolve map (slide 10) ---------- */
+/* Two images stacked at the same position; we ping-pong opacity between them
+   with smooth wipe transitions where one fully fades before the other appears. */
+.xfade-stack { position: relative; }
+.xfade-stack .xfade-stack__a,
+.xfade-stack .xfade-stack__b,
+.xfade-cap .xfade-cap__a,
+.xfade-cap .xfade-cap__b {
+  will-change: opacity;
+}
+/* Default state — A visible, B hidden. Applies always except when overridden by animation. */
+.xfade-stack__a, .xfade-cap__a { opacity: 1; }
+.xfade-stack__b, .xfade-cap__b { opacity: 0; }
+
+/* When the slide is active, run the ping-pong animation. */
+/* When the slide is active, run a single-pass 18s timeline.
+   Symmetric: every fade = 1.0s, every hold = 3.5s, every blank = 0.5s.
+   Plays once per slide entry. `forwards` keeps the final frame. */
+section.slide[data-deck-active] .xfade-stack__a,
+section.slide[data-deck-active] .xfade-cap__a {
+  animation: xfade-a 18s linear 0.5s 1 both;
+}
+section.slide[data-deck-active] .xfade-stack__b,
+section.slide[data-deck-active] .xfade-cap__b {
+  animation: xfade-b 18s linear 0.5s 1 both;
+}
+
+/* Symmetric 18s timeline. Every fade = 1.0s, every hold = 3.5s, every blank = 0.5s.
+   Timeline (in seconds):
+   0.0 – 1.0   orange fade IN
+   1.0 – 4.5   orange held
+   4.5 – 5.5   orange fade OUT
+   5.5 – 6.0   blank
+   6.0 – 7.0   blue fade IN
+   7.0 – 10.5  blue held
+   10.5 – 11.5 blue fade OUT
+   11.5 – 12.0 blank
+   12.0 – 13.0 orange fade IN
+   13.0 – 16.5 orange held
+   16.5 – 17.5 orange fade OUT
+   17.5 – 18.0 final blank */
+@keyframes xfade-a {
+  0%      { opacity: 0; }
+  5.56%   { opacity: 1; }   /* 1.0s — fade in done */
+  25%     { opacity: 1; }   /* 4.5s — hold ends */
+  30.56%  { opacity: 0; }   /* 5.5s — fade out done */
+  66.67%  { opacity: 0; }   /* 12.0s — start fade in #2 */
+  72.22%  { opacity: 1; }   /* 13.0s — fade in #2 done */
+  91.67%  { opacity: 1; }   /* 16.5s — hold ends */
+  97.22%  { opacity: 0; }   /* 17.5s — fade out done */
+  100%    { opacity: 0; }   /* 18.0s — final blank */
+}
+@keyframes xfade-b {
+  0%      { opacity: 0; }
+  33.33%  { opacity: 0; }   /* 6.0s — start fade in */
+  38.89%  { opacity: 1; }   /* 7.0s — fade in done */
+  58.33%  { opacity: 1; }   /* 10.5s — hold ends */
+  63.89%  { opacity: 0; }   /* 11.5s — fade out done */
+  100%    { opacity: 0; }
+}
+
+/* Slide-end fade-out: combines a fade-in (matching .reveal-fade) and a fade-out
+   at the end. Used on slide 9 (11.5s hold: fade in 0→1.2s, hold,
+   fade out 9.5→11.0s with ease-in, blank 11.0→11.5s before slide advances). */
+section.slide[data-deck-active] .fadeout-end {
+  animation: fade-in-then-out 11.5s cubic-bezier(0.55, 0, 0.55, 0.2) 0.4s 1 both;
+}
+@keyframes fade-in-then-out {
+  0%      { opacity: 0; }
+  10.43%  { opacity: 1; }   /* 1.2s — fade in done */
+  82.61%  { opacity: 1; }   /* 9.5s — start fade out */
+  95.65%  { opacity: 0; }   /* 11.0s — fully faded (1.5s fade with ease-in) */
+  100%    { opacity: 0; }   /* 11.5s — held blank */
+}
+  60% { opacity: 0.9; }
+  100% { opacity: 1; transform: scale(1); }
+}

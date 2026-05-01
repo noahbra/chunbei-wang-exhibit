@@ -1,410 +1,594 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>When Policy Climate Changes, So Does Who Becomes an Entrepreneur</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Source+Serif+4:wght@400;600;700&display=swap');
+<meta charset="UTF-8" />
+<title>When Policy Climate Changes — Kauffman Indicators 30th Anniversary</title>
+<meta name="viewport" content="width=1920, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=19">
+<script src="deck-stage.js"></script>
+<script src="chart.js?v=3"></script>
+<script src="chart-ethnicity.js?v=10"></script>
 
-  :root {
-    --navy: #1a2744;
-    --teal: #1b6d6d;
-    --gold: #c5972c;
-    --sand: #f5f0e8;
-    --slate: #4a5568;
-    --light-teal: #e6f0ef;
-    --push-color: #c53030;
-    --pull-color: #2b6cb0;
-  }
-
-  .reveal {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 28px;
-    color: var(--navy);
-  }
-
-  .reveal h1, .reveal h2, .reveal h3 {
-    font-family: 'Source Serif 4', serif;
-    font-weight: 700;
-    color: var(--navy);
-    text-transform: none;
-    letter-spacing: -0.01em;
-  }
-
-  .reveal h1 { font-size: 2.2em; line-height: 1.15; }
-  .reveal h2 { font-size: 1.6em; line-height: 1.2; }
-  .reveal h3 { font-size: 1.2em; }
-
-  .reveal .slide-background { background: var(--sand); }
-
-  /* Dark slides */
-  .reveal .dark-bg { background: var(--navy) !important; }
-  .reveal .dark-bg h1,
-  .reveal .dark-bg h2,
-  .reveal .dark-bg h3,
-  .reveal .dark-bg p,
-  .reveal .dark-bg li,
-  .reveal .dark-bg span { color: #fff !important; }
-  .reveal .dark-bg .subtitle { color: rgba(255,255,255,0.7) !important; }
-
-  /* Teal slides */
-  .reveal .teal-bg { background: var(--teal) !important; }
-  .reveal .teal-bg h1,
-  .reveal .teal-bg h2,
-  .reveal .teal-bg h3,
-  .reveal .teal-bg p,
-  .reveal .teal-bg li,
-  .reveal .teal-bg span { color: #fff !important; }
-
-  .subtitle {
-    font-size: 0.7em;
-    color: var(--slate);
-    font-weight: 300;
-    margin-top: 0.5em;
-  }
-
-  .big-number {
-    font-size: 4em;
-    font-weight: 700;
-    color: var(--teal);
-    line-height: 1;
-  }
-
-  .reveal .gold { color: var(--gold); }
-  .reveal .teal { color: var(--teal); }
-
-  .two-col {
-    display: flex;
-    gap: 2em;
-    align-items: flex-start;
-    text-align: left;
-  }
-  .two-col > div { flex: 1; }
-
-  .force-box {
-    border-radius: 12px;
-    padding: 1.2em 1.5em;
-    margin: 0.5em 0;
-    text-align: left;
-  }
-  .force-box.push {
-    background: rgba(197, 48, 48, 0.08);
-    border-left: 5px solid var(--push-color);
-  }
-  .force-box.pull {
-    background: rgba(43, 108, 176, 0.08);
-    border-left: 5px solid var(--pull-color);
-  }
-  .force-box h3 {
-    margin: 0 0 0.4em 0;
-    font-size: 0.95em;
-  }
-  .force-box.push h3 { color: var(--push-color) !important; }
-  .force-box.pull h3 { color: var(--pull-color) !important; }
-  .force-box ul {
-    margin: 0;
-    padding-left: 1.2em;
-    font-size: 0.85em;
-    line-height: 1.6;
-  }
-
-  .evidence-col {
-    border-radius: 12px;
-    padding: 1.2em 1.5em;
-    text-align: left;
-  }
-  .evidence-col.up {
-    background: rgba(197, 48, 48, 0.06);
-    border-top: 4px solid var(--push-color);
-  }
-  .evidence-col.down {
-    background: rgba(43, 108, 176, 0.06);
-    border-top: 4px solid var(--pull-color);
-  }
-
-  .arrow-up { color: var(--push-color); font-size: 1.4em; }
-  .arrow-down { color: var(--pull-color); font-size: 1.4em; }
-
-  .insight-text {
-    font-size: 1.3em;
-    line-height: 1.5;
-    max-width: 80%;
-    margin: 0 auto;
-    font-family: 'Source Serif 4', serif;
-  }
-
-  .map-container {
-    display: flex;
-    gap: 1em;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  .map-container img {
-    max-height: 380px;
-    border-radius: 8px;
-    background: #fff;
-    padding: 0.5em;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  }
-
-  .chart-img {
-    max-height: 420px;
-    border-radius: 8px;
-    background: #fff;
-    padding: 0.5em;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  }
-
-  .tag {
-    display: inline-block;
-    background: var(--teal);
-    color: #fff;
-    padding: 0.2em 0.7em;
-    border-radius: 20px;
-    font-size: 0.6em;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    vertical-align: middle;
-    margin-left: 0.5em;
-  }
-
-  .indicator-row {
-    display: flex;
-    gap: 1em;
-    text-align: left;
-    margin: 0.5em 0;
-    align-items: flex-start;
-  }
-  .indicator-row .label {
-    font-weight: 700;
-    color: var(--teal);
-    min-width: 220px;
-    font-size: 0.95em;
-  }
-  .indicator-row .desc {
-    font-size: 0.9em;
-    color: var(--slate);
-    line-height: 1.5;
-  }
-
-  .question-slide p {
-    font-size: 1.8em;
-    font-family: 'Source Serif 4', serif;
-    font-weight: 600;
-    line-height: 1.4;
-  }
-
-  .reveal .progress { color: var(--teal); height: 4px; }
-  .reveal .controls { color: var(--teal); }
-
-  .bottom-bar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 6px;
-    background: linear-gradient(90deg, var(--teal), var(--gold));
-  }
-</style>
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" style="background:#FAF6F0">
+  <circle cx="200" cy="200" r="120" fill="#D4541C"/>
+  <text x="200" y="232" text-anchor="middle" font-family="serif" font-size="120" font-weight="700" fill="#FAF6F0">30</text>
+</svg>
+</template>
 </head>
 <body>
-<div class="reveal">
-<div class="slides">
 
-  <!-- Slide 1: Title -->
-  <section data-background-color="#1a2744" data-auto-animate>
-    <h1 style="color:#fff; font-size:2em;">When Policy Climate Changes,<br>So Does Who Becomes<br>an Entrepreneur</h1>
-    <p class="subtitle" style="color:rgba(255,255,255,0.6); margin-top:1.5em;">
-      Chunbei Wang&ensp;|&ensp;Virginia Tech
-    </p>
-    <div class="bottom-bar"></div>
-  </section>
+<deck-stage>
 
-  <!-- Slide 2: Hook stat + chart -->
-  <section data-auto-animate>
-    <h2>Immigrants Are <span class="teal">2&times;</span> More Likely<br>to Start Businesses</h2>
-    <p style="color:var(--slate); font-size:0.85em; margin-bottom:0.5em;">The gap has widened since the mid-2000s</p>
-    <img src="chart-entry-rate.png" class="chart-img" alt="Entry rate chart showing immigrants vs natives 1994-2024">
-    <div class="bottom-bar"></div>
-  </section>
+  <!-- ============== SLIDE 1 — Cover ============== -->
+  <section class="slide bg-cover dark" data-screen-label="01 Cover">
+    <div style="position: absolute; top: 110px; left: 120px; right: 120px;" class="reveal d-0">
+      <p class="eyebrow text-paper" style="color: var(--gold); opacity: 0.95;">Kauffman Indicators · 30 Years</p>
+    </div>
 
-  <!-- Slide 3: Question -->
-  <section data-background-color="#1b6d6d" class="question-slide">
-    <p style="color:#fff;">What drives the rise in immigrant entrepreneurship?</p>
-    <p style="color:rgba(255,255,255,0.65); font-size:0.85em;">The timing coincides with tighter immigration enforcement.</p>
-    <div class="bottom-bar"></div>
-  </section>
+    <div style="position: absolute; left: 120px; right: 120px; top: 240px;" class="col gap-md">
+      <h1 class="h-display reveal d-1" style="color: white; font-size: 124px; line-height: 0.96; max-width: 1620px;">
+        When the policy <em class="accent" style="color: var(--gold);">climate</em> changes,
+        <br/>so does <em class="accent" style="color: var(--orange-soft);">who</em> becomes an entrepreneur.
+      </h1>
+    </div>
 
-  <!-- Slide 4: Up or Down? -->
-  <section data-auto-animate>
-    <h2>What Does Enforcement Do<br>to Entrepreneurship?</h2>
-    <div style="display:flex; gap:3em; justify-content:center; margin-top:2em;">
-      <div style="text-align:center;">
-        <span style="font-size:5em; color:var(--push-color);">&#8593;</span>
-        <p style="font-size:1.1em; font-weight:600;">Increase?</p>
-      </div>
-      <div style="text-align:center;">
-        <span style="font-size:5em; color:var(--pull-color);">&#8595;</span>
-        <p style="font-size:1.1em; font-weight:600;">Decrease?</p>
+    <div style="position: absolute; left: 120px; bottom: 220px;" class="row gap-md reveal d-3" >
+      <div style="display: flex; align-items: center; gap: 24px;">
+        <div style="width: 88px; height: 88px; border-radius: 50%; background: linear-gradient(135deg, var(--blue-light), var(--orange-soft)); display: grid; place-items: center; color: white; font-family: var(--serif); font-style: italic; font-size: 38px; font-weight: 500;">CW</div>
+        <div class="col" style="gap: 4px;">
+          <div class="h-3" style="color: white; font-weight: 500;">Chunbei Wang</div>
+          <div class="body" style="color: rgba(255,255,255,0.85); font-size: 26px;">Virginia Tech</div>
+        </div>
       </div>
     </div>
-    <div class="bottom-bar"></div>
+
+    <div class="anniv-mark">
+      <div class="badge">30</div>
+      <div class="text">Kauffman Indicators · <strong>1996 – 2026</strong></div>
+    </div>
   </section>
 
-  <!-- Slide 5: Answer -->
-  <section data-background-color="#1a2744">
-    <p style="color:rgba(255,255,255,0.5); font-size:1em; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;">Answer</p>
-    <h1 style="color:var(--gold); font-size:4em; margin:0.2em 0;">Both.</h1>
-    <div class="bottom-bar"></div>
-  </section>
 
-  <!-- Slide 6: Two Forces -->
-  <section data-auto-animate>
-    <h2>One Policy, Two Forces</h2>
-    <div style="display:flex; gap:1.5em; margin-top:1em;">
-      <div class="force-box push" style="flex:1;">
-        <h3><span class="arrow-up">&#8593;</span> Push Into Entrepreneurship</h3>
-        <ul>
-          <li>Fewer wage jobs available</li>
-          <li>Exit from formal employment</li>
-          <li>More necessity entrepreneurship<br><small style="color:var(--slate);">(self-employment when wage options shrink)</small></li>
-        </ul>
-      </div>
-      <div class="force-box pull" style="flex:1;">
-        <h3><span class="arrow-down">&#8595;</span> Pull Away from Entrepreneurship</h3>
-        <ul>
-          <li>Smaller customer base</li>
-          <li>Less access to credit</li>
-          <li>Discrimination and uncertainty</li>
-        </ul>
+  <!-- ============== SLIDE 2 — The hook: 2× more likely ============== -->
+  <section class="slide bg-warm" data-screen-label="02 The Gap">
+    <div class="pad-outer col gap-md">
+      <div class="row" style="justify-content: space-between; align-items: flex-end;">
+        <div class="col gap-md" style="max-width: 760px;">
+          <p class="eyebrow reveal d-0">The Pattern</p>
+          <h2 class="h-1 reveal d-1">
+            Immigrants are <em class="accent" style="font-style: normal; color: var(--blue); font-weight: 500;">2×</em> more likely to start businesses.
+          </h2>
+          <p class="body-lg reveal d-2" style="margin-top: 12px;">
+            And the gap has only <strong style="color: var(--orange);">widened</strong> since the mid-2000s.
+          </p>
+
+          <div class="col gap-sm reveal d-3" style="margin-top: 32px;">
+            <div class="row" style="align-items: center; gap: 16px;">
+              <span style="width: 36px; height: 5px; background: var(--blue); border-radius: 2px;"></span>
+              <span class="label-cap" style="color: var(--blue);">Immigrants</span>
+            </div>
+            <div class="row" style="align-items: center; gap: 16px;">
+              <span style="width: 36px; height: 3px; background: #A55B4A; border-radius: 2px; border-top: 1px dashed #A55B4A;"></span>
+              <span class="label-cap" style="color: #A55B4A;">U.S.-born</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-root reveal-fade d-2" style="width: 1100px; max-width: 1100px; min-width: 0; margin-left: 40px; flex-shrink: 0; align-self: center;"></div>
       </div>
     </div>
-    <div class="bottom-bar"></div>
+    <div class="anniv-mark"><div class="badge">30</div><div class="text">Kauffman Indicators · <strong>1996 – 2026</strong></div></div>
+    <div class="slide-attr">Wang · Virginia Tech</div>
   </section>
 
-  <!-- Slide 7: Evidence -->
-  <section data-auto-animate>
-    <h2>Same Policy, Different Responses</h2>
-    <div style="display:flex; gap:1.5em; margin-top:1em;">
-      <div class="evidence-col up" style="flex:1;">
-        <p><span class="arrow-up" style="font-size:1.8em;">&#8593;</span></p>
-        <h3 style="margin:0.3em 0;">Hispanic Immigrants</h3>
-        <p style="font-size:0.9em; color:var(--slate); line-height:1.6;">
-          Large increase in self-employment.<br>
-          Mostly necessity-driven.
+
+  <!-- ============== SLIDE 3 — What drives it? ============== -->
+  <section class="slide bg-paper" data-screen-label="03 What Drives It">
+    <div class="pad-outer col" style="justify-content: center;">
+      <div class="col gap-md" style="max-width: 1500px;">
+        <p class="eyebrow reveal d-0">The Question</p>
+        <h2 class="h-1 reveal d-1" style="font-size: 110px; line-height: 1.0;">
+          What drives the rise in immigrant entrepreneurship?
+        </h2>
+
+        <div class="reveal d-3" style="margin-top: 80px; padding: 48px 56px; background: white; border-left: 6px solid var(--orange); border-radius: 4px; box-shadow: 0 8px 32px rgba(79,69,61,0.06);">
+          <p class="body-lg" style="font-size: 38px; line-height: 1.4; color: var(--ink);">
+            The timing coincides with <em class="accent" style="font-weight: 500;">tighter immigration enforcement.</em>
+          </p>
+          <p class="body" style="margin-top: 16px; color: var(--warm-dark); opacity: 0.75; font-size: 24px;">
+            A correlation worth investigating.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="anniv-mark"><div class="badge">30</div><div class="text">Kauffman Indicators · <strong>1996 – 2026</strong></div></div>
+    <div class="slide-attr">Wang · Virginia Tech</div>
+  </section>
+
+
+  <!-- ============== SLIDE 4 — Up arrow / Down arrow ============== -->
+  <section class="slide bg-warm" data-screen-label="04 Up or Down">
+    <div class="pad-outer col gap-lg" style="justify-content: center; align-items: center;">
+      <div class="col" style="text-align: center; gap: 12px;">
+        <p class="eyebrow reveal d-0">The Puzzle</p>
+        <h2 class="h-1 reveal d-1" style="text-align: center;">
+          What does enforcement do<br/>to entrepreneurship?
+        </h2>
+      </div>
+
+      <div class="row gap-xl reveal d-3" style="margin-top: 48px; align-items: center;">
+        <!-- UP -->
+        <div class="col" style="align-items: center; gap: 24px;">
+          <div style="width: 220px; height: 220px; border-radius: 50%; background: linear-gradient(135deg, rgba(151,193,60,0.18), rgba(53,121,189,0.10)); display: grid; place-items: center; animation: pulseUp 2.4s ease-in-out infinite;">
+            <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+              <path d="M60 95 L60 25 M60 25 L30 55 M60 25 L90 55" stroke="#3579BD" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="h-3" style="color: var(--blue);">Push it up?</div>
+        </div>
+
+        <div class="h-display" style="font-style: italic; color: var(--warm-dark); opacity: 0.4; font-size: 96px;">or</div>
+
+        <!-- DOWN -->
+        <div class="col" style="align-items: center; gap: 24px;">
+          <div style="width: 220px; height: 220px; border-radius: 50%; background: linear-gradient(135deg, rgba(240,121,35,0.18), rgba(165,91,74,0.10)); display: grid; place-items: center; animation: pulseDown 2.4s ease-in-out infinite; animation-delay: 1.2s;">
+            <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+              <path d="M60 25 L60 95 M60 95 L30 65 M60 95 L90 65" stroke="#F07923" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="h-3" style="color: var(--orange);">Pull it down?</div>
+        </div>
+      </div>
+    </div>
+    <div class="anniv-mark"><div class="badge">30</div><div class="text">Kauffman Indicators · <strong>1996 – 2026</strong></div></div>
+    <div class="slide-attr">Wang · Virginia Tech</div>
+  </section>
+
+
+  <!-- ============== SLIDE 5 — Answer: Both ============== -->
+  <section class="slide bg-blue dark" data-screen-label="05 Both">
+    <div class="pad-outer col" style="justify-content: center; align-items: center;">
+      <p class="eyebrow reveal d-0" style="color: var(--gold);">Answer</p>
+      <h1 class="reveal-scale d-1" style="font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 360px; line-height: 1; color: white; letter-spacing: -0.04em; margin-top: 24px; text-shadow: 0 2px 40px rgba(0,0,0,0.15);">
+        Both.
+      </h1>
+      <p class="body-lg reveal d-3" style="color: white; font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 48px; line-height: 1.25; margin-top: 56px; max-width: 1100px; text-align: center;">
+        One policy. <span style="color: var(--gold); font-weight: 500;">Two opposing forces.</span> Working at the same time.
+      </p>
+    </div>
+    <div class="anniv-mark"><div class="badge">30</div><div class="text">Kauffman Indicators · <strong>1996 – 2026</strong></div></div>
+    <div class="slide-attr" style="color: rgba(255,255,255,0.7);">Wang · Virginia Tech</div>
+  </section>
+
+
+  <!-- ============== SLIDE 6 — One policy, two forces ============== -->
+  <section class="slide bg-paper" data-screen-label="06 Two Forces">
+    <div class="pad-outer col gap-md">
+      <div class="col gap-sm reveal d-0">
+        <p class="eyebrow">The Mechanism</p>
+        <h2 class="h-2">One policy → two forces</h2>
+      </div>
+
+      <div class="row gap-lg" style="margin-top: 40px; flex: 1;">
+        <!-- PUSH -->
+        <div class="col reveal d-1" style="flex: 1; background: linear-gradient(160deg, rgba(53,121,189,0.06), rgba(53,121,189,0.02)); border-radius: 12px; padding: 48px; border-top: 6px solid var(--blue);">
+          <div class="row" style="align-items: center; gap: 16px;">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <path d="M24 38 L24 10 M24 10 L12 22 M24 10 L36 22" stroke="#3579BD" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="label-cap" style="color: var(--blue);">Push into entrepreneurship</span>
+          </div>
+          <h3 class="h-3" style="margin-top: 24px; font-size: 32px; line-height: 1.3;">Fewer wage jobs</h3>
+          <ul class="body" style="margin-top: 24px; padding-left: 0; list-style: none; gap: 14px; display: flex; flex-direction: column;">
+            <li style="display: flex; gap: 14px;"><span style="color: var(--blue); font-weight: 700;">→</span><span>Exit from formal employment</span></li>
+            <li style="display: flex; gap: 14px;"><span style="color: var(--blue); font-weight: 700;">→</span><span>More <em style="color: var(--blue); font-style: italic; font-weight: 600;">necessity</em> entrepreneurship — self-employment when wage options shrink</span></li>
+          </ul>
+        </div>
+
+        <!-- PULL -->
+        <div class="col reveal d-2" style="flex: 1; background: linear-gradient(160deg, rgba(240,121,35,0.06), rgba(240,121,35,0.02)); border-radius: 12px; padding: 48px; border-top: 6px solid var(--orange);">
+          <div class="row" style="align-items: center; gap: 16px;">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <path d="M24 10 L24 38 M24 38 L12 26 M24 38 L36 26" stroke="#F07923" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="label-cap" style="color: var(--orange);">Pull away from entrepreneurship</span>
+          </div>
+          <h3 class="h-3" style="margin-top: 24px; font-size: 32px; line-height: 1.3;">Harder to sustain a business</h3>
+          <ul class="body" style="margin-top: 24px; padding-left: 0; list-style: none; gap: 14px; display: flex; flex-direction: column;">
+            <li style="display: flex; gap: 14px;"><span style="color: var(--orange); font-weight: 700;">→</span><span>Smaller customer base</span></li>
+            <li style="display: flex; gap: 14px;"><span style="color: var(--orange); font-weight: 700;">→</span><span>Less access to credit</span></li>
+            <li style="display: flex; gap: 14px;"><span style="color: var(--orange); font-weight: 700;">→</span><span>Discrimination & uncertainty</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reveal d-4" style="margin-top: 16px; text-align: center;">
+        <p class="h-3" style="font-style: italic; color: var(--warm-dark); font-family: var(--serif); font-weight: 400;">
+          Which effect dominates?
         </p>
       </div>
-      <div class="evidence-col down" style="flex:1;">
-        <p><span class="arrow-down" style="font-size:1.8em;">&#8595;</span></p>
-        <h3 style="margin:0.3em 0;">Arab &amp; Muslim Immigrants</h3>
-        <p style="font-size:0.9em; color:var(--slate); line-height:1.6;">
-          Sharp decline post-9/11.<br>
-          Uncertainty and potential discrimination.
+    </div>
+    <div class="anniv-mark"><div class="badge">30</div><div class="text">Kauffman Indicators · <strong>1996 – 2026</strong></div></div>
+    <div class="slide-attr">Wang · Virginia Tech</div>
+  </section>
+
+
+  <!-- ============== SLIDE 7 — Different responses ============== -->
+  <section class="slide bg-paper" data-screen-label="07 Different Responses">
+    <div class="pad-outer col gap-md">
+      <div class="col gap-sm reveal d-0">
+        <p class="eyebrow">Evidence</p>
+        <h2 class="h-2">Same policy. Different responses.</h2>
+      </div>
+
+      <div class="row gap-lg" style="margin-top: 40px; flex: 1;">
+        <!-- Hispanic immigrants -->
+        <div class="col reveal d-1" style="flex: 1; padding: 48px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(79,69,61,0.06);">
+          <div class="row" style="align-items: baseline; gap: 20px;">
+            <div style="font-family: var(--serif); font-size: 80px; line-height: 1; color: var(--blue); font-weight: 500;">↑</div>
+            <div class="col">
+              <span class="label-cap" style="color: var(--blue);">Hispanic Immigrants</span>
+              <span class="body" style="margin-top: 4px; font-size: 24px; color: var(--warm-dark); opacity: 0.7;">Push wins</span>
+            </div>
+          </div>
+          <h3 class="h-3" style="margin-top: 32px; font-size: 32px; line-height: 1.25; color: var(--blue-deep);">
+            Large increase in self-employment
+          </h3>
+          <p class="body" style="margin-top: 16px;">
+            Mostly <em style="font-style: italic; color: var(--blue); font-weight: 600;">necessity-driven</em> — wage opportunities shrink, self-employment fills the gap.
+          </p>
+        </div>
+
+        <!-- Arab/Muslim immigrants -->
+        <div class="col reveal d-2" style="flex: 1; padding: 48px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(79,69,61,0.06);">
+          <div class="row" style="align-items: baseline; gap: 20px;">
+            <div style="font-family: var(--serif); font-size: 80px; line-height: 1; color: var(--orange); font-weight: 500;">↓</div>
+            <div class="col">
+              <span class="label-cap" style="color: var(--orange);">Arab & Muslim Immigrants</span>
+              <span class="body" style="margin-top: 4px; font-size: 24px; color: var(--warm-dark); opacity: 0.7;">Pull wins · post-9/11</span>
+            </div>
+          </div>
+          <h3 class="h-3" style="margin-top: 32px; font-size: 32px; line-height: 1.25; color: var(--orange);">
+            Decline in self-employment
+          </h3>
+          <p class="body" style="margin-top: 16px;">
+            Customer-base contraction, banking discrimination, and broader uncertainty <em style="font-style: italic;">pull</em> entrepreneurs out of the market.
+          </p>
+        </div>
+      </div>
+
+      <div class="reveal d-4" style="margin-top: 16px; text-align: center;">
+        <p class="h-3" style="font-style: italic; color: var(--warm-dark); font-family: var(--serif); font-weight: 400;">
+          So… what happens overall?
         </p>
       </div>
     </div>
-    <p style="margin-top:1.5em; font-size:0.95em; color:var(--slate);">So what happens overall?</p>
-    <div class="bottom-bar"></div>
+    <div class="anniv-mark"><div class="badge">30</div><div class="text">Kauffman Indicators · <strong>1996 – 2026</strong></div></div>
+    <div class="slide-attr">Wang · Virginia Tech</div>
   </section>
 
-  <!-- Slide 8: Overall -->
-  <section data-auto-animate>
-    <h2>Overall: <span class="teal">Increase</span></h2>
-    <div style="text-align:left; max-width:75%; margin:1.5em auto 0;">
-      <p style="font-size:1.05em; line-height:1.7;">
-        <strong>Hispanic immigrants</strong> drive the overall rise:
-      </p>
-      <ul style="font-size:0.95em; line-height:1.8; color:var(--slate);">
-        <li>Large undocumented population</li>
-        <li>Large impact from enforcement</li>
-        <li>Strong shift into necessity entrepreneurship</li>
-      </ul>
-      <p style="font-size:0.95em; line-height:1.7; margin-top:1em;">
-        This partly drives the overall rise in immigrant entrepreneurship rates.
-      </p>
-    </div>
-    <div class="bottom-bar"></div>
-  </section>
 
-  <!-- Slide 9: Maps -->
-  <section data-auto-animate>
-    <h2 style="font-size:1.3em;">Where Would You Expect Immigrant<br>Entrepreneurship to Rise?</h2>
-    <p style="color:var(--slate); font-size:0.8em;">Necessity entrepreneurship rises most where enforcement is strongest</p>
-    <div class="map-container">
-      <img src="map-enforcement.png" alt="Map: Enforcement Change 2000-2023">
-      <img src="map-necessity-entry.png" alt="Map: Change in Immigrant Necessity Entry 2000-2023">
-    </div>
-    <div class="bottom-bar"></div>
-  </section>
+  <!-- ============== SLIDE 8 — Overall: increase ============== -->
+  <section class="slide bg-warm" data-screen-label="08 Overall Increase">
+    <div class="pad-outer col gap-md">
+      <p class="eyebrow reveal d-0">Overall</p>
+      <h2 class="h-1 reveal d-1" style="max-width: 1400px;">
+        The aggregate rises because the <em class="accent" style="font-weight: 500;">push</em> dominates.
+      </h2>
 
-  <!-- Slide 10: Core Insight -->
-  <section data-background-color="#1b6d6d">
-    <p style="color:rgba(255,255,255,0.5); font-size:0.85em; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;">Core Insight</p>
-    <p class="insight-text" style="color:#fff;">
-      The rise in immigrant entrepreneurship is not just about opportunity.<br><br>
-      <span style="color:var(--gold);">It is partly driven by constraint.</span>
-    </p>
-    <div class="bottom-bar"></div>
-  </section>
-
-  <!-- Slide 11: Kauffman connection -->
-  <section data-auto-animate>
-    <h2>Connection to Kauffman Indicators</h2>
-    <div style="max-width:80%; margin:1.5em auto 0; text-align:left;">
-      <div class="indicator-row">
-        <div class="label">Entrepreneurial Rate</div>
-        <div class="desc">Explains why immigrant entry rate rises.</div>
-      </div>
-      <hr style="border:none; border-top:1px solid rgba(0,0,0,0.08); margin:0.8em 0;">
-      <div class="indicator-row">
-        <div class="label">Opportunity vs. Necessity</div>
-        <div class="desc">Enforcement shifts entrepreneurship toward necessity.</div>
-      </div>
-      <hr style="border:none; border-top:1px solid rgba(0,0,0,0.08); margin:0.8em 0;">
-      <div class="indicator-row">
-        <div class="label" style="font-style:italic; color:var(--slate);">The key question</div>
-        <div class="desc" style="font-weight:600; color:var(--navy);">Not just how many businesses start, but <em>why</em> they start.</div>
+      <div class="row gap-lg reveal d-2" style="margin-top: 56px; align-items: stretch;">
+        <div class="col" style="flex: 1; padding: 40px; background: white; border-radius: 12px; border-left: 5px solid var(--blue); box-shadow: 0 4px 20px rgba(79,69,61,0.05);">
+          <div class="label-cap" style="color: var(--blue);">Why?</div>
+          <h3 class="h-3" style="margin-top: 16px; font-size: 30px; line-height: 1.3;">Hispanic immigrants are a much larger group…</h3>
+          <p class="body" style="margin-top: 12px;">…with a sizable undocumented population, who feel enforcement most directly.</p>
+        </div>
+        <div class="col" style="flex: 1; padding: 40px; background: white; border-radius: 12px; border-left: 5px solid var(--orange); box-shadow: 0 4px 20px rgba(79,69,61,0.05);">
+          <div class="label-cap" style="color: var(--orange);">So</div>
+          <h3 class="h-3" style="margin-top: 16px; font-size: 30px; line-height: 1.3;">Their strong shift into <em style="font-style: italic; color: var(--orange);">necessity</em> entrepreneurship…</h3>
+          <p class="body" style="margin-top: 12px;">…drives much of the overall rise we see in the headline statistic.</p>
+        </div>
       </div>
     </div>
-    <div class="bottom-bar"></div>
+    <div class="anniv-mark"><div class="badge">30</div><div class="text">Kauffman Indicators · <strong>1996 – 2026</strong></div></div>
+    <div class="slide-attr">Wang · Virginia Tech</div>
   </section>
 
-  <!-- Slide 12: Takeaway -->
-  <section data-background-color="#1a2744">
-    <p style="color:rgba(255,255,255,0.5); font-size:0.85em; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;">Takeaway</p>
-    <p class="insight-text" style="color:#fff; font-size:1.2em;">
-      Entrepreneurship statistics don't always reflect opportunity.
-    </p>
-    <p style="color:rgba(255,255,255,0.65); font-size:0.9em; max-width:75%; margin:1em auto 0; line-height:1.7;">
-      The increase in immigrant entrepreneurship is real, but much of it is driven by necessity, not expanding opportunity.
-    </p>
-    <p style="color:var(--gold); font-size:1em; margin-top:2em; font-family:'Source Serif 4',serif; font-weight:600;">
-      More entrepreneurs does not always mean more opportunity.
-    </p>
-    <div class="bottom-bar"></div>
+
+  <!-- ============== SLIDE 9 — Question ============== -->
+  <section class="slide bg-paper" data-screen-label="09 Geography Question">
+    <div class="pad-outer col" style="gap: 32px; padding-bottom: 140px;">
+
+      <!-- Header -->
+      <div class="col gap-sm reveal d-0">
+        <p class="eyebrow">Geography</p>
+        <h2 class="h-2" style="max-width: 1700px; line-height: 1.05;">
+          If enforcement is doing the pushing —<br/>
+          <em style="font-style: italic; font-weight: 400; color: var(--orange);">where</em> should we see immigrant entrepreneurship rise?
+        </h2>
+      </div>
+
+      <!-- Map column -->
+      <div class="col reveal-fade d-2 fadeout-end" style="flex: 1; align-items: center; justify-content: center; position: relative;">
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 18px;">
+          <span style="width: 14px; height: 14px; border-radius: 50%; background: var(--blue-deep);"></span>
+          <span class="label-cap" style="color: var(--blue-deep); font-size: 28px; letter-spacing: 0.14em;">Enforcement intensity · change 2000–2023</span>
+        </div>
+        <img src="assets/map_enforce_tile.svg?v=2" alt="US states map showing enforcement intensity change 2000–2023" style="width: 100%; max-width: 880px;"/>
+        <p class="reveal d-3" style="margin-top: 18px; font-family: var(--serif); font-style: italic; font-size: 32px; color: var(--warm-dark); text-align: center;">
+          Hold this map in mind.
+        </p>
+      </div>
+
+    </div>
+    <div class="anniv-mark"><div class="badge">30</div><div class="text">Kauffman Indicators</div></div>
+    <div class="slide-attr">Wang · Virginia Tech</div>
   </section>
 
-</div>
-</div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+  <!-- ============== SLIDE 10 — Reveal (cross-dissolve to same map) ============== -->
+  <section class="slide bg-paper" data-screen-label="10 Geography Reveal">
+    <div class="pad-outer col" style="gap: 32px; padding-bottom: 140px;">
+
+      <!-- Header — neutral so it reads on both map states -->
+      <div class="col gap-sm reveal-fade d-0">
+        <p class="eyebrow" style="color: var(--warm-dark); opacity: 0.55;">Same map.</p>
+        <h2 class="h-2" style="max-width: 1700px; line-height: 1.05;">
+          Necessity entrepreneurship rises in the <em style="font-style: italic; font-weight: 400;">very same states.</em>
+        </h2>
+      </div>
+
+      <!-- Map column with caption that swaps in sync with the dissolve -->
+      <div class="col" style="flex: 1; align-items: center; justify-content: center; position: relative;">
+        <!-- Caption stack -->
+        <div class="xfade-cap" style="position: relative; width: 100%; max-width: 1180px; height: 36px; margin-bottom: 18px;">
+          <div class="xfade-cap__a" style="position: absolute; left: 50%; top: 0; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 14px; white-space: nowrap;">
+            <span style="width: 14px; height: 14px; border-radius: 50%; background: var(--orange);"></span>
+            <span class="label-cap" style="color: var(--orange); font-size: 28px; letter-spacing: 0.14em;">Necessity entrepreneurship · 2000–2023</span>
+          </div>
+          <div class="xfade-cap__b" style="position: absolute; left: 50%; top: 0; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 14px; white-space: nowrap;">
+            <span style="width: 14px; height: 14px; border-radius: 50%; background: var(--blue-deep);"></span>
+            <span class="label-cap" style="color: var(--blue-deep); font-size: 28px; letter-spacing: 0.14em;">Enforcement intensity · 2000–2023</span>
+          </div>
+        </div>
+
+        <!-- Cross-dissolve map stack -->
+        <div class="xfade-stack" style="position: relative; width: 100%; max-width: 880px; aspect-ratio: 1290 / 920;">
+          <img src="assets/map_necessity_tile.svg?v=2" alt="Necessity entrepreneurship map" class="xfade-stack__a" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;"/>
+          <img src="assets/map_enforce_tile.svg?v=2" alt="Enforcement map" class="xfade-stack__b" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;"/>
+        </div>
+
+        <p class="reveal-fade d-3" style="margin-top: 18px; font-family: var(--serif); font-style: italic; font-size: 32px; color: var(--warm-dark); text-align: center;">
+          The pattern lines up — <strong style="font-style: normal; font-weight: 600;">the same force is at work.</strong>
+        </p>
+      </div>
+
+    </div>
+    <div class="anniv-mark"><div class="badge">30</div><div class="text">Kauffman Indicators</div></div>
+    <div class="slide-attr">Wang · Virginia Tech</div>
+  </section>
+
+
+  <!-- ============== SLIDE 10 — Core insight (now slide 11 in flow) ============== -->
+  <section class="slide bg-blue dark" data-screen-label="11 Core Insight">
+    <div class="pad-outer col" style="justify-content: center;">
+      <p class="eyebrow reveal d-0" style="color: var(--gold);">Core Insight</p>
+      <h2 class="h-display reveal d-1" style="color: white; font-size: 124px; max-width: 1500px; margin-top: 32px;">
+        The rise in immigrant entrepreneurship is not just about <span class="strike-word"><span class="strike-word__text">opportunity</span><svg class="strike-word__slash" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 2 78 C 22 60, 48 42, 75 24 S 96 14, 98 12" fill="none" stroke="#F5A45C" stroke-width="6" stroke-linecap="round"/></svg></span>.
+      </h2>
+      <h2 class="h-display reveal d-3" style="color: var(--gold); font-style: italic; font-family: var(--serif); font-weight: 400; font-size: 124px; margin-top: 32px; max-width: 1500px;">
+        It is partly driven by constraint.
+      </h2>
+    </div>
+    <div class="anniv-mark"><div class="badge">30</div><div class="text">Kauffman Indicators · <strong>1996 – 2026</strong></div></div>
+    <div class="slide-attr" style="color: rgba(255,255,255,0.7);">Wang · Virginia Tech</div>
+  </section>
+
+
+  <!-- ============== SLIDE 12 — Rate of New Entrepreneurs by Ethnicity (Fig 3) ============== -->
+  <section class="slide bg-paper" data-screen-label="12 Already In Your Data">
+    <div class="pad-outer col" style="gap: 14px; padding-bottom: 100px; padding-top: 60px;">
+
+      <div class="col gap-sm reveal d-0" style="max-width: 1700px;">
+        <p class="eyebrow" style="color: var(--orange);">Kauffman Indicators · Figure 3</p>
+        <h2 class="h-1" style="font-size: 76px; line-height: 1.05;">
+          The aggregate rise is a <em style="font-style: italic; font-weight: 500; color: var(--orange);">Latino</em> story.
+        </h2>
+      </div>
+
+      <!-- Chart container -->
+      <div class="chart-root chart-rate reveal-fade d-1" style="width: 100%; max-width: 1380px; align-self: center;"></div>
+
+      <div class="reveal d-3" style="max-width: 1700px; margin-top: -10px;">
+        <p style="font-family: var(--serif); font-style: italic; font-size: 32px; color: var(--warm-dark); line-height: 1.25;">
+          Other groups have been <strong style="font-style: normal; font-weight: 600;">relatively flat for 30 years</strong>. One line is doing all the work.
+        </p>
+      </div>
+
+    </div>
+    <div class="slide-attr">Wang · Virginia Tech</div>
+  </section>
+
+
+  <!-- ============== SLIDE 13 — Opportunity Share by Ethnicity (Fig 10) ============== -->
+  <section class="slide bg-paper" data-screen-label="13 And Necessity Driven">
+    <div class="pad-outer col" style="gap: 14px; padding-bottom: 120px; padding-top: 60px;">
+
+      <div class="col gap-sm reveal d-0" style="max-width: 1700px;">
+        <p class="eyebrow" style="color: var(--orange);">Kauffman Indicators · Figure 10</p>
+        <h2 class="h-1" style="font-size: 76px; line-height: 1.05;">
+          And it's a <em style="font-style: italic; font-weight: 500; color: var(--orange);">necessity</em> story.
+        </h2>
+      </div>
+
+      <!-- Chart container -->
+      <div class="chart-root chart-opp reveal-fade d-1" style="width: 100%; max-width: 1380px; align-self: center;"></div>
+
+      <div class="reveal d-3" style="max-width: 1300px; margin-top: -10px;">
+        <p style="font-family: var(--serif); font-style: italic; font-size: 32px; color: var(--warm-dark); line-height: 1.25;">
+          The group driving the rise has the <strong style="font-style: normal; font-weight: 600;">lowest opportunity share</strong> — and it falls when enforcement intensifies.
+        </p>
+      </div>
+
+    </div>
+    <div class="slide-attr">Wang · Virginia Tech</div>
+  </section>
+
+
+  <!-- ============== SLIDE 14 — So What (loop closer) ============== -->
+  <section class="slide bg-warm" data-screen-label="14 So What">
+    <div class="pad-outer col" style="gap: 36px; padding-bottom: 140px; justify-content: center;">
+
+      <div class="col gap-sm reveal d-0">
+        <p class="eyebrow" style="color: var(--orange);">Takeaway</p>
+        <h2 class="h-1" style="max-width: 1700px; font-size: 76px; line-height: 1.05;">
+          Entrepreneurship statistics don't always reflect <em style="font-style: italic; font-weight: 500; color: var(--orange);">opportunity</em>.
+        </h2>
+        <p class="body-lg reveal d-1" style="margin-top: 18px; max-width: 1500px;">
+          The increase in immigrant entrepreneurship is real — but much of it is driven by <strong style="color: var(--orange);">necessity</strong>, not expanding opportunity.
+        </p>
+      </div>
+
+      <!-- Two-column split: self-employment can reflect either growth or constraint -->
+      <div class="row gap-lg reveal d-2" style="align-items: stretch;">
+        <div class="col" style="flex: 1; padding: 32px 36px; background: rgba(255,255,255,0.6); border-radius: 14px; border-top: 4px solid var(--lime);">
+          <div class="label-cap" style="color: var(--warm-dark); opacity: 0.6;">Self-employment can reflect</div>
+          <div class="h-3" style="margin-top: 10px; font-size: 38px; line-height: 1.2;">Growth</div>
+          <div class="body" style="margin-top: 12px; opacity: 0.8;">A more entrepreneurial economy — opportunity, ambition, dynamism.</div>
+        </div>
+
+        <div class="col" style="flex: 0 0 auto; align-items: center; justify-content: center; padding: 32px 12px;">
+          <span style="font-family: var(--serif); font-style: italic; font-size: 42px; color: var(--warm-dark); opacity: 0.6;">or</span>
+        </div>
+
+        <div class="col" style="flex: 1; padding: 32px 36px; background: rgba(255,255,255,0.6); border-radius: 14px; border-top: 4px solid var(--orange);">
+          <div class="label-cap" style="color: var(--orange);">Or it can reflect</div>
+          <div class="h-3" style="margin-top: 10px; font-size: 38px; line-height: 1.2; color: var(--orange);">Limited wage options</div>
+          <div class="body" style="margin-top: 12px; opacity: 0.85;">Necessity — when the labor market closes a door, self-employment fills the gap.</div>
+        </div>
+      </div>
+
+      <!-- Bottom: closes the loop -->
+      <div class="reveal d-4">
+        <p style="font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 38px; line-height: 1.2; max-width: 1700px;">
+          Behind every indicator is a <em style="color: var(--orange);">story</em> about who, and why.
+        </p>
+      </div>
+
+    </div>
+    <div class="anniv-mark"><div class="badge">30</div><div class="text">Kauffman Indicators · <strong>1996 – 2026</strong></div></div>
+    <div class="slide-attr">Wang · Virginia Tech</div>
+  </section>
+
+</deck-stage>
+
+
+<!-- ============== Auto-loop logic ============== -->
 <script>
-Reveal.initialize({
-  hash: true,
-  loop: true,
-  autoSlide: 15000,
-  autoSlideStoppable: true,
-  transition: 'fade',
-  transitionSpeed: 'slow',
-  controls: true,
-  progress: true,
-  center: true,
-  width: 1280,
-  height: 720
-});
+  // Per-slide hold durations (ms)
+  const SLIDE_DURATIONS = [
+    9000,   // 1 cover
+    14000,  // 2 chart (long; the chart takes ~4s to draw)
+    9000,   // 3 question
+    9000,   // 4 up/down
+    8000,   // 5 BOTH
+    13000,  // 6 two forces
+    13000,  // 7 same policy different responses
+    11000,  // 8 overall increase
+    11500,  // 9 maps question
+    18500,  // 10 maps reveal (cross-dissolve)
+    13000,  // 11 core insight
+    14000,  // 12 rate by ethnicity (chart animates ~5s)
+    14000,  // 13 opp share by ethnicity
+    14000,  // 14 takeaway
+  ];
+
+  const stage = document.querySelector('deck-stage');
+  let timer = null;
+  let paused = false;
+
+  function scheduleNext(idx) {
+    clearTimeout(timer);
+    if (paused) return;
+    const dur = SLIDE_DURATIONS[idx] || 10000;
+    timer = setTimeout(() => {
+      const next = (idx + 1) % stage.length;
+      stage.goTo(next);
+    }, dur);
+  }
+
+  // Force-restart CSS animations on the active slide so reveals replay
+  // each loop. deck-stage applies [data-deck-active]; we toggle off→on.
+  function replayAnimations(idx) {
+    const slide = document.querySelectorAll('section.slide')[idx];
+    if (!slide) return;
+    const animatable = slide.querySelectorAll('.reveal, .reveal-fade, .reveal-scale');
+    animatable.forEach((el) => {
+      el.style.animation = 'none';
+      // force reflow
+      void el.offsetWidth;
+      el.style.animation = '';
+    });
+  }
+
+  // Initial chart draws + boot the loop
+  function bootDeck() {
+    const slide2Chart = document.querySelector('section[data-screen-label="02 The Gap"] .chart-root');
+    if (slide2Chart && window.EntryRateChart) {
+      window.EntryRateChart.drawChart(slide2Chart);
+    }
+    const rateChart = document.querySelector('.chart-rate');
+    if (rateChart && window.EthnicityCharts) {
+      window.EthnicityCharts.drawRate(rateChart);
+    }
+    const oppChart = document.querySelector('.chart-opp');
+    if (oppChart && window.EthnicityCharts) {
+      window.EthnicityCharts.drawOpp(oppChart);
+    }
+    // Schedule the first transition based on current slide
+    setTimeout(() => scheduleNext(stage.index ?? 0), 100);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bootDeck);
+  } else {
+    // DOM already parsed — boot immediately
+    bootDeck();
+  }
+
+  // Listen for slide changes — replay animations + re-schedule
+  stage.addEventListener('slidechange', (e) => {
+    const idx = e.detail.index;
+    replayAnimations(idx);
+    const slide = document.querySelectorAll('section.slide')[idx];
+    // Replay chart on slide 2 (index 1)
+    if (idx === 1 && window.EntryRateChart) {
+      setTimeout(() => window.EntryRateChart.play(slide), 250);
+    }
+    // Replay ethnicity charts on slides 12 & 13 (index 11 & 12)
+    if ((idx === 11 || idx === 12) && window.EthnicityCharts) {
+      setTimeout(() => window.EthnicityCharts.play(slide), 250);
+    }
+    scheduleNext(idx);
+  });
+
+  // Pause when cursor sits still over the page; resume on mouseleave or movement.
+  // Using window-level pointer events so we only react to actual page-leave,
+  // not every micro-bubble from inner elements.
+  let pauseTimer = null;
+  function bumpResume() {
+    if (paused) {
+      paused = false;
+      scheduleNext(stage.index ?? 0);
+    }
+    clearTimeout(pauseTimer);
+  }
+  // (Auto-pause on hover is intentionally disabled — caused presenter confusion.
+  //  Use spacebar or arrow keys to manually pause/navigate.)
 </script>
+
 </body>
 </html>
